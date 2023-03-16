@@ -1,6 +1,6 @@
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
-token='5604059957:AAH6qr3UjsxQRTA5mooQMaBmGd2BwUGL_I8'
+token=''
 bot=telebot.TeleBot(token)
 
 
@@ -24,22 +24,14 @@ def show_item(call, path_to_picture, cb_data, name):
                          photo=photo, 
                          caption=f'{name}', 
                          reply_markup=buy_keyboard)
-    
-# def show_button(call):
-#     buy_keyboard2 = InlineKeyboardMarkup(row_width=1)
-#     callback_button = InlineKeyboardButton(text="Купить", callback_data="Купить")
-#     callback_button2 = InlineKeyboardButton(text="Каталог", callback_data="Каталог")
-#     buy_keyboard2.add(callback_button, callback_button2)
-#     msg = bot.send_message(chat_id=call.message.chat.id,  
-#                            text='Прекрасный выбор', 
-#                            reply_markup=buy_keyboard2)    
+       
 
 
 
 def providing_name_callback(msg, name):
     print(msg)
     str = f'username={msg.from_user.username}, text={msg.text}, item_name={name}'
-    chat_id= 5495705118
+    chat_id=''
     bot.send_message(chat_id=chat_id, text=str)
 
 @bot.callback_query_handler(func=lambda call: True)
