@@ -77,14 +77,13 @@ def callback_inline(call):
                                 callback_button9,
                                 callback_button10)
 
-        # try:                      
+                            
             bot.edit_message_text(
                 chat_id=call.message.chat.id,
                 message_id=call.message.message_id,
                 text="Табак",
                 reply_markup=button_tabak)                   
-        # except Exception as e:
-        #  print('Error:', e)
+        
 
 
         if call.data == 'Bali Shag Halfzware':
